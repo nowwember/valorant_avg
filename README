@@ -1,0 +1,44 @@
+README — запуск из терминала (macOS и Windows)
+
+Требования
+- Python 3.x установлен в системе.
+- Файл называется: ranks_avg.py (UTF-8).
+
+Быстрый старт
+- Интерактивный режим (спросит 5 званий):
+    macOS:   python3 ranks_avg.py
+    Windows (PowerShell): python ranks_avg.py
+    Windows (CMD):        python ranks_avg.py
+    Windows (альтернатива): py -3 ranks_avg.py
+
+- С аргументом --ranks (через запятую или пробелы):
+    macOS:   python3 ranks_avg.py --ranks "д1, а1, б1, с1, г1"
+    Windows: python ranks_avg.py --ranks "diamond 2 ascendant3 иммо1 gold3 platinum1"
+             (или) py -3 ranks_avg.py --ranks "diamond 2 ascendant3 иммо1 gold3 platinum1"
+
+Опция Radiant
+- По умолчанию Radiant включён как верхняя точка шкалы.
+- Отключить (Radiant трактуется как Immortal 3):
+    macOS:   python3 ranks_avg.py --exclude-radiant --ranks "radiant, immortal3, diamond3, gold3, ascendant3"
+    Windows: python ranks_avg.py --exclude-radiant --ranks "radiant, immortal3, diamond3, gold3, ascendant3"
+
+Примеры
+- macOS:
+    python3 ranks_avg.py --ranks "Алмаз 1, Асцендант 1, бронза 1, серебро1, золото 1"
+    python3 ranks_avg.py --ranks "diamond 2 ascendant3 иммо1 gold3 platinum1"
+- Windows (PowerShell/CMD):
+    python ranks_avg.py --ranks "д1, а1, б1, с1, г1"
+    py -3 ranks_avg.py --ranks "Radiant, Immortal 3, Immortal 3, Ascendant 3, Diamond 3"
+
+Проверка doctest (опционально)
+- macOS:   python3 -m doctest -v ranks_avg.py
+- Windows: python -m doctest -v ranks_avg.py
+           (или) py -3 -m doctest -v ranks_avg.py
+
+Подсказки/ошибки
+- Если команда не найдена:
+    macOS:   установи Python (например, brew install python), затем `python3 --version`.
+    Windows: поставь Python с python.org (или из Microsoft Store). Команды: `python --version` или `py -3 --version`.
+- Если в Windows (старый CMD) некорректно отображается кириллица:
+    выполни `chcp 65001` перед запуском или используй PowerShell (Windows 10/11 по умолчанию выводит UTF-8).
+
